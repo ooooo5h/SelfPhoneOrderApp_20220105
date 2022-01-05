@@ -65,8 +65,39 @@
             android:id="@+id/btnCall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="전화 연결"/>
+            android:text="전화    연결"/>
 
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공식 홈페이지 링크"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="실제 사이트 주소"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/btnMoveWebSite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사이트 이동"/>
 
     </LinearLayout>
 </LinearLayout>
