@@ -1,6 +1,7 @@
 package com.neppplus.selfphoneorderapp_20220105.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,13 +10,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.neppplus.selfphoneorderapp_20220105.R
+import com.neppplus.selfphoneorderapp_20220105.ViewStoreDetailActivity
 import com.neppplus.selfphoneorderapp_20220105.models.StoreData
 
 class StoreAdapter(
     val mContext : Context,
     val mList : List<StoreData>) : RecyclerView.Adapter<StoreAdapter.MyViewHolder>() {
 
-    inner class MyViewHolder(row : View) : RecyclerView.ViewHolder(row){
+    inner class MyViewHolder(val row : View) : RecyclerView.ViewHolder(row){
 
         val imgLogo = row.findViewById<ImageView>(R.id.imgLogo)
         val txtStoreName = row.findViewById<TextView>(R.id.txtStoreName)
@@ -24,6 +26,14 @@ class StoreAdapter(
 
             txtStoreName.text = data.Name
             Glide.with(mContext).load(data.logoUrl).into(imgLogo)
+
+            row.setOnClickListener {
+
+                val myIntent = Intent(mContext, ViewStoreDetailActivity::class.java)
+                myIntent.putExtra("store", data)
+                mContext.startActivity(myIntent)
+
+            }
 
         }
 
