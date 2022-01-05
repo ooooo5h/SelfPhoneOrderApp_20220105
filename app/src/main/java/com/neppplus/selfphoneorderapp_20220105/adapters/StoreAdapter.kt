@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.neppplus.selfphoneorderapp_20220105.R
 import com.neppplus.selfphoneorderapp_20220105.models.StoreData
 
@@ -22,6 +23,7 @@ class StoreAdapter(
         fun bind(data: StoreData) {
 
             txtStoreName.text = data.Name
+            Glide.with(mContext).load(data.logoUrl).into(imgLogo)
 
         }
 
