@@ -4,6 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.neppplus.selfphoneorderapp_20220105.R
 import com.neppplus.selfphoneorderapp_20220105.models.StoreData
@@ -13,6 +15,15 @@ class StoreAdapter(
     val mList : List<StoreData>) : RecyclerView.Adapter<StoreAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(row : View) : RecyclerView.ViewHolder(row){
+
+        val imgLogo = row.findViewById<ImageView>(R.id.imgLogo)
+        val txtStoreName = row.findViewById<TextView>(R.id.txtStoreName)
+
+        fun bind(data: StoreData) {
+
+            txtStoreName.text = data.Name
+
+        }
 
     }
 
@@ -24,6 +35,7 @@ class StoreAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
+        holder.bind(mList[position])
     }
 
     override fun getItemCount(): Int {
