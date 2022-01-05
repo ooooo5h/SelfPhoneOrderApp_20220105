@@ -33,6 +33,7 @@ class ViewStoreDetailActivity : AppCompatActivity() {
                     startActivity(myIntent)
                 }
 
+
                 override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
 
                     Toast.makeText(this@ViewStoreDetailActivity, "권한이 거절되었습니다.", Toast.LENGTH_SHORT).show()
