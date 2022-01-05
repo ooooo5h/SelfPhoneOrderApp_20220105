@@ -22,6 +22,14 @@ class ViewStoreDetailActivity : AppCompatActivity() {
         txtStoreName.text = storeData.Name
         txtPhoneNum.text = storeData.phoneNum
         Glide.with(this).load(storeData.logoUrl).into(imgLogo)
+        txtLink.text = storeData.website
+
+        btnMoveWebSite.setOnClickListener {
+
+            val myIntent = Intent(Intent.ACTION_VIEW, Uri.parse(storeData.website))
+            startActivity(myIntent)
+
+        }
 
         btnCall.setOnClickListener {
 

@@ -5,6 +5,7 @@ import java.io.Serializable
 class StoreData(
     val Name : String,
     val phoneNum : String,
-    val logoUrl : String
+    val logoUrl : String,
+    val website : String
 ) : Serializable{
 }
